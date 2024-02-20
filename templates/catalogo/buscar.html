@@ -1,0 +1,45 @@
+{% extends 'catalogo/base.html' %}
+{% load static %}
+{% block content %}
+            <section class="conteudo">
+                <section class="tags">
+                    <p class="tags__titulo">Filtrar por:</p>
+                    <ul class="tags__lista">
+                        <li class="tags__tag">Fonte primária</li>
+                        <li class="tags__tag">Legislação</li>
+                    </ul>
+                </section>
+                <section class="galeria">
+                    <div class="cards">
+                        <h2 class="cards__titulo">Fichas:</h2>
+                            <ul class="cards__lista">
+                                {% if cards %}
+                                {% for documento in cards %}
+                                <a class="card__ufpr" href="{% url 'imagemfp' documento.id %}">
+                                    <div class="ficha__info">
+                                        <img class="imagem__card__ufpr" src="{% static '/assets/imagens/galeria/documentofp.png'%}" alt="foto de documento">
+                                        <p>{{ documento.numero }}</p>
+                                        <p>{{ documento.tipo }}</p>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                                {% else %}
+                                {% endif %}
+                                {% if cardslg %}
+                                {% for documento in cardslg %}
+                                <a class="card__ufpr" href="{% url 'imagemlg' documento.id %}">
+                                    <div class="ficha__info">
+                                        <img class="imagem__card__ufpr" src="{% static '/assets/imagens/galeria/documentolg.png'%}" alt="foto de documento">
+                                        <p>{{ documento.numero }}</p>
+                                        <p>{{ documento.assinatura }}</p>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                                {% endif %}
+                            </ul>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+{% endblock %}

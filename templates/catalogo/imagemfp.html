@@ -1,0 +1,48 @@
+{% extends 'catalogo/base.html' %}
+{% load static %}
+{% block content %}
+            <section class="conteudo">
+                <section class="imagem">
+                    <div class="imagem__conteudo">
+                        <div class="imagem__info">
+                            <div class="imagem__texto">
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Número:</p><p class="imagem__atributos">{{ documento.numero }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Tipo:</p><p class="imagem__atributos">{{ documento.tipo }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Título:</p><p class="imagem__atributos">{{ documento.titulo }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Remetente:</p><p class="imagem__atributos">{{ documento.remetente }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Destinatário:</p><p class="imagem__atributos">{{ documento.destinatario }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Data:</p><p class="imagem__atributos">{{ documento.data }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Referência:</p><p class="imagem__atributos">{{ documento.referencia }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Assunto:</p><p class="imagem__atributos">{{ documento.assunto }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <p class="imagem__titulo">Palavras Chave:</p><p class="imagem__atributos">{{ documento.palavras_chave }}</p>   
+                                </div>
+                                <div class="linha__documento">
+                                    <a class="botao__pdf" href="{% url 'view_documentofp' documento.pk %}">Baixar PDF</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </section>
+        </main>
+    </div>
+{% endblock %}

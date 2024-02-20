@@ -1,0 +1,31 @@
+{% load static %}
+<div class="pagina-inicial">
+    <header class="cabecalho">
+        <img class="logo__ufpr" src="{% static '/assets/logo/UFPR.png' %}" alt="Logo UFPR" />
+        {% for message in messages %}
+        <div>
+            <p class="message">{{message}}</p>
+        </div>
+        {% endfor %}
+        <div class="cabecalho__busca">
+            <form action="{% url 'buscar' %}" class="busca__fundo">
+                <input class="busca__input" type="text" name="buscar" placeholder="Número do documento">
+                <button class="botao__buscar" type="submit">
+                    <p>Buscar</p>
+                </button>
+            </form>
+        </div>
+    </header>
+    <main class="principal">
+        <section class="menu-lateral">
+            <nav class="menu-lateral__navegacao">
+                <div class="menu-lateral__textos">
+                    <p>*</p>
+                    <a href="{% url 'index' %}">Home</a>
+                </div>
+                <div class="menu-lateral__textos">
+                    <p>*</p>
+                    <a href="/admin">Adicionar ficha</a>
+                </div>                   
+            </nav>
+        </section>
