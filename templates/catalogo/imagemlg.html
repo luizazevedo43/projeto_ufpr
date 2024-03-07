@@ -7,34 +7,34 @@
                         <div class="imagem__info">
                             <div class="imagem__texto">
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Número:</p><p class="imagem__atributos">{{ documento.numero }}</p>   
+                                    <p class="imagem__titulo">Número:</p><p class="imagem__atributos">{{ item.numero }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Data:</p><p class="imagem__atributos">{{ documento.data }}</p>   
+                                    <p class="imagem__titulo">Data:</p><p class="imagem__atributos">{{ item.data }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Ementa:</p><p class="imagem__atributos">{{ documento.ementa }}</p>   
+                                    <p class="imagem__titulo">Ementa:</p><p class="imagem__atributos">{{ item.ementa }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Assinatura:</p><p class="imagem__atributos">{{ documento.assinatura }}</p>   
+                                    <p class="imagem__titulo">Assinatura:</p><p class="imagem__atributos">{{ item.assinatura }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Assunto:</p><p class="imagem__atributos">{{ documento.assunto }}</p>   
+                                    <p class="imagem__titulo">Assunto:</p><p class="imagem__atributos">{{ item.assunto }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Referência:</p><p class="imagem__atributos">{{ documento.referencia }}</p>   
+                                    <p class="imagem__titulo">Referência:</p><p class="imagem__atributos">{{ item.referencia }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Local:</p><p class="imagem__atributos">{{ documento.local }}</p>   
+                                    <p class="imagem__titulo">Local:</p><p class="imagem__atributos">{{ item.local }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Entidade de origem:</p><p class="imagem__atributos">{{ documento.entidade_origem }}</p>   
+                                    <p class="imagem__titulo">Entidade de origem:</p><p class="imagem__atributos">{{ item.entidade_origem }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <p class="imagem__titulo">Palavras Chave:</p><p class="imagem__atributos">{{ documento.palavras_chave }}</p>   
+                                    <p class="imagem__titulo">Palavras Chave:</p><p class="imagem__atributos">{{ item.palavras_chave }}</p>   
                                 </div>
                                 <div class="linha__documento">
-                                    <a class="botao__pdf" href="{% url 'view_documentolg' documento.pk %}">PDF</a>
+                                    <a class="botao__pdf" href="{% url 'view_documentolg' item.pk %}">PDF</a>
                                 </div>
                             </div>
                         </div>

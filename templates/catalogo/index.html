@@ -14,29 +14,24 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Fichas:</h2>
                             <ul class="cards__lista">
-                                {% if cards %}
-                                {% for documento in cards %}
-                                <a class="card__ufpr" href="{% url 'imagemfp' documento.id %}">
+                                {% for item in zippedItems %}
+                                {% if item in documentofp %}
+                                <a class = "card__ufpr" href="{% url 'imagemfp' item.id %}">
                                     <div class="ficha__info">
-                                        <img class="imagem__card__ufpr" src="{% static '/assets/imagens/galeria/documentofp.png'%}" alt="foto de documento">
-                                        <p>{{ documento.numero }}</p>
-                                        <p>{{ documento.tipo }}</p>
+                                        <img class="imagem__card__ufpr" src="{% static '/assets/imagens/galeria/documentofp.png' %}" alt="foto de documento">
+                                        <p>{{ item.numero }}</p>
                                     </div>
                                 </a>
-                                {% endfor %}
-                                {% else %}
                                 {% endif %}
-                                {% if cardslg %}
-                                {% for documento in cardslg %}
-                                <a class="card__ufpr" href="{% url 'imagemlg' documento.id %}">
+                                {% if item in documentolg %} 
+                                <a class = "card__ufpr" href="{% url 'imagemlg' item.id %}">
                                     <div class="ficha__info">
-                                        <img class="imagem__card__ufpr" src="{% static '/assets/imagens/galeria/documentolg.png'%}" alt="foto de documento">
-                                        <p>{{ documento.numero }}</p>
-                                        <p>{{ documento.assinatura }}</p>
+                                        <img class="imagem__card__ufpr" src="{% static '/assets/imagens/galeria/documentolg.png' %}" alt="foto de documento">
+                                        <p>{{ item.data }}</p>
                                     </div>
                                 </a>
+                                {% endif %}                               
                                 {% endfor %}
-                                {% endif %}
                             </ul>
                     </div>
                 </section>
